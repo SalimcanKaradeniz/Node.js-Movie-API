@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 module.exports = () => {
-    mongoose.connect('mongodb://salimcan:salim12345@ds137643.mlab.com:37643/movie-api', {useMongoClient:true});
+    // mongoose.connect('mongodb://salimcan:salim12345@ds137643.mlab.com:37643/movie-api', {useMongoClient:true});
+    mongoose.connect('mongodb://salim:salim11@ds137643.mlab.com:37643/movie-api', {useMongoClient:true});
 
 
     mongoose.connection.on('open', () => {
