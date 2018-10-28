@@ -81,7 +81,7 @@ router.post('/', (req, res, next) => {
 
 });
 
-// 2 yıl arasındaki Filmler
+// belirli yıllar arasındaki Filmler
 router.get('/between/:start_year/:end_year', (req, res) => {
     const {start_year, end_year} = req.params;
     const promise = Movie.find(
