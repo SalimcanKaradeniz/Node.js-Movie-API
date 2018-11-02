@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 const MovieSchema = new Schema({
     director_id: Schema.Types.ObjectId,
     title: {
-       type: String,
-       required: true,
-   },
+        type: String,
+        required: [true, 'Lütfen başlık giriniz..'],
+        maxlength: [15, 'Lütfen 15 karakterin altında giriniz...'],
+        minlength: [1, 'Lütfen en az 1 karakter giriniz...']
+    },
     category: String,
     country: String,
     year: Number,
@@ -17,4 +19,4 @@ const MovieSchema = new Schema({
     }
 });
 
-module.exports= mongoose.model('movie', MovieSchema);
+module.exports = mongoose.model('movie', MovieSchema);

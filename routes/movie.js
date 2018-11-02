@@ -6,7 +6,22 @@ const router = express.Router();
 const Movie = require('../models/Movie');
 
 router.get('/', (req, res) => {
-    const promise = Movie.find({});
+    const promise = Movie.aggregate([
+        {
+            $lookup: {
+                from: 'directors',
+                localField: 'director_id',
+                foreignField: '_id',
+                as: 'directors'
+            }
+
+        },
+        {
+            $unwind: {
+                path: '$directors',
+            }
+        },
+    ]);
     promise.then((data) => {
         res.json(data);
     }).catch((err) => {
@@ -61,11 +76,12 @@ router.delete('/:movie_id', (req, res, next) => {
     })
 });
 
-/* GET users listing. */
+// Movie Kaydetme
 router.post('/', (req, res, next) => {
-    const {title, imdb_score, category, country, year} = req.body;
+    const {director_id, title, imdb_score, category, country, year} = req.body;
 
     const movie = new Movie({
+        director_id: director_id,
         title: title,
         imdb_score: imdb_score,
         category: category,
