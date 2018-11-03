@@ -1,5 +1,5 @@
 # Node.js-Movie-API
-Node.js Movie API
+Node.js Express framework ve MongoDB kullanarak Rest API projesi geliştirmiş bulunmaktayım.
 
 # Movies
 
