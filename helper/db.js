@@ -12,17 +12,3 @@ module.exports = () => {
         console.log("MongoDB'ye bağlanırken Hata oluştu.", err);
     })
 };
-
-
-// RethinkDB update.
-// r.table("rt_test").filter(
-//     r.row["name"] = "Python&Dajgno"
-// ).update({
-//     "name": "Python"
-// };
-
-
-//RethinkDB insert Python
-// def process_item(self, item, spider):
-// r.table(self.table_name).insert(dict(item)).run(self.conn)
-// return item
