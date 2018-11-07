@@ -1,4 +1,6 @@
 # Node.js-Movie-API
+[![BuildStatus](https://api.travis-ci.org/SalimcanKaradeniz/Node.js-Movie-API.svg)](https://travis-ci.org/SalimcanKaradeniz/Node.js-Movie-API)
+
 Node.js Express framework ve MongoDB kullanarak Rest API projesi geliştirmiş bulunmaktayım.
 
 # Movies
