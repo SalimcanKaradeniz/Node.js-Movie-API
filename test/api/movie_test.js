@@ -26,7 +26,6 @@ describe('/api/movies test', () => {
                     res.body.should.be.a('array');
                     done();
                 });
-            done()
         });
     });
     describe('/POST movie', () => {
