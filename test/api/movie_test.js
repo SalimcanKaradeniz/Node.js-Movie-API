@@ -20,7 +20,7 @@ describe('/api/movies test', () => {
         it('it should GET all the movies', (done) => {
             chai.request(server)
                 .get('/api/movies')
-                .set('x-access-token', 'aaa')
+                .set('x-access-token', token)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('array');
